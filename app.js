@@ -38,6 +38,4 @@ app.get('/refresh_token', (req, res) => spotify.refresh_token(req, res, request)
 app.post('/signin', (req, res) => signin.handleSignIn(req, res, db, bcrypt))
 app.post('/signup', (req, res) => signup.handleSignUp(req, res, db, bcrypt));
 
-console.log("PORT:" + process.env.PORT);
-
-app.listen(8888);
+app.listen(process.env.PORT);
