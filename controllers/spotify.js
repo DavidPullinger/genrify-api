@@ -1,7 +1,7 @@
 // parameters used by developer for authentication
 let client_id = '20ed86ad8a114ec98a0bd0660e2e6964'; // Your client id
 let client_secret = '4c59eabedcd940d0a0e89d6c54223717'; // Your secret
-let redirect_uri = 'http://localhost:8888/callback'; // Your redirect uri
+let redirect_uri = 'https://guarded-castle-76432.herokuapp.com/callback'; // Your redirect uri
 let stateKey = 'spotify_auth_state';
 // generates random string for querystring
 let generateRandomString = function (length) {
