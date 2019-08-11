@@ -3,7 +3,7 @@
   "name": "genrify-api",
   "description": "genrify server",
   "scripts": {
-    "start": "nodemon app.js"
+    "start": "node app.js"
   },
   "version": "0.0.2",
   "dependencies": {
