@@ -32,6 +32,7 @@ const db = knex({
 });
 
 // routes
+app.get('/', () => console.log("GENRIFY SERVER"));
 app.get('/login', (req, res) => spotify.login(req, res, querystring));
 app.get('/callback', (req, res) => spotify.callback(req, res, querystring, request));
 app.get('/refresh_token', (req, res) => spotify.refresh_token(req, res, request));
