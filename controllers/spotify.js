@@ -21,7 +21,7 @@ const login = (req, res, querystring) => {
     res.cookie(stateKey, state);
 
     // your application requests authorization
-    let scope = 'user-read-private playlist-modify-private';
+    let scope = 'playlist-read-private playlist-modify-private';
     res.redirect('https://accounts.spotify.com/authorize?' +
         querystring.stringify({
             response_type: 'code',
