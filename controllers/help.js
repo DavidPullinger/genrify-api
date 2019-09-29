@@ -1,5 +1,6 @@
 const addHelp = (req, res, db) => {
-    res.json("Help is working!");
+    let { email, question } = req.body;
+    res.json("So " + email + "wants to know: " + question);
 }
 
 module.exports = {
