@@ -11,6 +11,7 @@ const knex = require('knex');
 const signup = require('./controllers/signup');
 const signin = require('./controllers/signin');
 const spotify = require('./controllers/spotify');
+const help = require('./controllers/help');
 
 // initialise server 
 let app = express();
@@ -34,5 +35,6 @@ app.get('/callback', (req, res) => spotify.callback(req, res, querystring, reque
 app.get('/refresh_token', (req, res) => spotify.refresh_token(req, res, request));
 app.post('/signin', (req, res) => signin.handleSignIn(req, res, db, bcrypt))
 app.post('/signup', (req, res) => signup.handleSignUp(req, res, db, bcrypt));
+app.post('/addHelp', (req, res) => help.addHelp(req, res, db));
 
 app.listen(process.env.PORT);
