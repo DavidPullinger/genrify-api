@@ -18,5 +18,6 @@ const getHelp = (req, res, db) => {
 }
 
 module.exports = {
-    addHelp: addHelp
+    addHelp: addHelp,
+    getHelp: getHelp
 }

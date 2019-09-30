@@ -36,5 +36,6 @@ app.get('/refresh_token', (req, res) => spotify.refresh_token(req, res, request)
 app.post('/signin', (req, res) => signin.handleSignIn(req, res, db, bcrypt))
 app.post('/signup', (req, res) => signup.handleSignUp(req, res, db, bcrypt));
 app.post('/addHelp', (req, res) => help.addHelp(req, res, db));
+app.get('/getHelp', (req, res) => help.getHelp(req, res, db));
 
 app.listen(process.env.PORT);
