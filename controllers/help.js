@@ -14,7 +14,7 @@ const addHelp = (req, res, db) => {
 const getHelp = (req, res, db) => {
     db.select('question', 'answer')
         .from('help')
-        .whereNot({ question: null })
+        .whereNot({ answer: null })
         .then(data => res.json(data))
 }
 
