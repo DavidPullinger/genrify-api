@@ -11,6 +11,12 @@ const addHelp = (req, res, db) => {
         .then(res.json("Success"))
 }
 
+const getHelp = (req, res, db) => {
+    db.select('question', 'answer')
+        .from('help')
+        .then(data => res.json(data))
+}
+
 module.exports = {
     addHelp: addHelp
 }
