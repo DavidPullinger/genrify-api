@@ -12,7 +12,7 @@ const addHelp = (req, res, db) => {
 }
 
 const getHelp = (req, res, db) => {
-    db.select('question', 'answer')
+    db.select('helpid', 'question', 'answer')
         .from('help')
         .whereNot({ answer: null })
         .then(data => res.json(data))
