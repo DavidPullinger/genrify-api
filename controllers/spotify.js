@@ -69,7 +69,7 @@ const callback = (req, res, querystring, request) => {
                     refresh_token = body.refresh_token;
 
                 // we can also pass the token to the browser to make requests from there
-                res.redirect('https://genrify.herokuapp.com/#' +
+                res.redirect('http://localhost:3000#' +
                     querystring.stringify({
                         access_token: access_token,
                         refresh_token: refresh_token
