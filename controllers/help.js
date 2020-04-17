@@ -17,7 +17,7 @@ const getHelp = (req, res, db) => {
     db.select('helpid', 'question', 'answer')
         .from('help')
         .whereNot({ answer: null })
-        .then(data => res.json(data +"Oobey goobey"))
+        .then(data => res.json(data))
 }
 
 module.exports = {
