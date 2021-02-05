@@ -8,11 +8,8 @@ const bodyParser = require('body-parser');
 const bcrypt = require('bcrypt-nodejs');
 const knex = require('knex');
 // class imports
-const signup = require('./controllers/signup');
-const signin = require('./controllers/signin');
 const spotify = require('./controllers/spotify');
 const help = require('./controllers/help');
-
 // initialise server 
 let app = express();
 app.use(express.static(__dirname + '/public'))
@@ -27,15 +24,12 @@ const db = knex({
     ssl: true
   }
 });
-
 // routes
 app.get('/', (req, res) => res.send("GENRIFY SERVER"));
 app.get('/login', (req, res) => spotify.login(req, res, querystring));
 app.get('/callback', (req, res) => spotify.callback(req, res, querystring, request));
 app.get('/refresh_token', (req, res) => spotify.refresh_token(req, res, request));
-app.post('/signin', (req, res) => signin.handleSignIn(req, res, db, bcrypt))
-app.post('/signup', (req, res) => signup.handleSignUp(req, res, db, bcrypt));
 app.post('/addHelp', (req, res) => help.addHelp(req, res, db));
 app.get('/getHelp', (req, res) => help.getHelp(req, res, db));
 
-app.listen(process.env.PORT);
+app.listen(3000, () => console.log(`Listening on PORT ${3000}`));

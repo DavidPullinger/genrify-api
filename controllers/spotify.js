@@ -1,7 +1,7 @@
 // parameters used by developer for authentication
-let client_id = process.env.CLIENT_ID; // Your client id
-let client_secret = process.env.CLIENT_SECRET; // Your secret
-let redirect_uri = 'https://guarded-castle-76432.herokuapp.com/callback'; // Your redirect uri
+let client_id = '20ed86ad8a114ec98a0bd0660e2e6964'; // Your client id
+let client_secret = '4c59eabedcd940d0a0e89d6c54223717'; // Your secret
+let redirect_uri = 'http://localhost:3000/callback'; // Your redirect uri
 let stateKey = 'spotify_auth_state';
 // generates random string for querystring
 let generateRandomString = function (length) {
@@ -69,11 +69,11 @@ const callback = (req, res, querystring, request) => {
                     refresh_token = body.refresh_token;
 
                 // we can also pass the token to the browser to make requests from there
-                res.redirect('https://genrify.herokuapp.com/#' +
-                    querystring.stringify({
-                        access_token: access_token,
-                        refresh_token: refresh_token
-                    }));
+                res.redirect('http://localhost:8888/callback/#' +
+                querystring.stringify({
+                  access_token: access_token,
+                  refresh_token: refresh_token
+                }));
             } else {
                 res.redirect('/#' +
                     querystring.stringify({
