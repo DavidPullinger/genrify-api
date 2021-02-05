@@ -1,6 +1,6 @@
 // parameters used by developer for authentication
-let client_id = '20ed86ad8a114ec98a0bd0660e2e6964'; // Your client id
-let client_secret = '4c59eabedcd940d0a0e89d6c54223717'; // Your secret
+let client_id = ''; // Your client id
+let client_secret = ''; // Your secret
 let redirect_uri = 'http://localhost:3000/callback'; // Your redirect uri
 let stateKey = 'spotify_auth_state';
 // generates random string for querystring
