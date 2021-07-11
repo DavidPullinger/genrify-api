@@ -5,7 +5,6 @@ const cors = require('cors');
 const querystring = require('querystring');
 const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
-const bcrypt = require('bcrypt-nodejs');
 const knex = require('knex');
 // class imports
 const spotify = require('./controllers/spotify');
