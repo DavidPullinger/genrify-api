@@ -31,7 +31,7 @@ const login = (req, res, querystring) => {
         scope: scope,
         redirect_uri: redirect_uri,
         state: state,
-        show_dialog: true,
+        show_dialog: false,
       })
   );
 };
